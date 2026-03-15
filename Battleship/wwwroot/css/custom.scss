@@ -1,0 +1,280 @@
+// ==========================================================
+// Battleship Theme - Bootstrap SCSS Overrides
+// Dark, rounded, arcadey, soft modern, cyan-led
+// ==========================================================
+
+// ----------------------------------------------------------
+// Font
+// ----------------------------------------------------------
+
+@import "../lib/inter/inter-latin.css";
+
+$font-family-sans-serif:
+        "Inter",
+        "Segoe UI",
+        "Trebuchet MS",
+        "Verdana",
+        "Arial",
+        sans-serif;
+
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$line-height-base: 1.5;
+$headings-font-weight: 700;
+
+// ----------------------------------------------------------
+// Core Bootstrap Theme Colours
+// ----------------------------------------------------------
+
+$primary:   #39d0ff; // bright cyan
+$secondary: #7b8aa8; // muted cool slate
+$success:   #43d17c; // friendly green
+$info:      #7ba8ff; // soft periwinkle blue
+$warning:   #ffbd59; // warm arcade amber
+$danger:    #ff6b88; // playful coral-pink red
+$light:     #eaf6ff; // soft icy light
+$dark:      #162033; // dark navy panel tone
+
+// ----------------------------------------------------------
+// Body / Surface / Border
+// ----------------------------------------------------------
+
+$body-bg:        #0a1020; // main app background
+$body-color:     #e8f4ff; // soft readable text
+$border-color:   #2a3650; // subtle cool border
+$secondary-bg:   #121a2e; // panel/card background
+$tertiary-bg:    #1a2440; // elevated inner sections
+
+// ----------------------------------------------------------
+// Links
+// ----------------------------------------------------------
+
+$link-color:           $primary;
+$link-hover-color:     #74e3ff;
+$link-decoration:      none;
+
+// ----------------------------------------------------------
+// Border Radius - soft, rounded, playful
+// ----------------------------------------------------------
+
+$border-radius:        1rem;
+$border-radius-sm:     0.75rem;
+$border-radius-lg:     1.25rem;
+$border-radius-xl:     1.5rem;
+$border-radius-xxl:    2rem;
+$border-radius-pill:   50rem;
+
+// ----------------------------------------------------------
+// Buttons - chunkier, more arcade, softer
+// ----------------------------------------------------------
+
+$btn-font-weight:      700;
+$btn-padding-y:        0.7rem;
+$btn-padding-x:        1.15rem;
+$btn-border-radius:    1rem;
+$btn-border-radius-sm: 0.85rem;
+$btn-border-radius-lg: 1.2rem;
+$btn-border-radius-xl: 1.5rem;
+
+$btn-focus-width:      0.2rem;
+$btn-focus-box-shadow: 0 0 0 0.2rem rgba(57, 208, 255, 0.3);
+
+// ----------------------------------------------------------
+// Inputs - soft dark controls with cyan focus
+// ----------------------------------------------------------
+
+$input-bg:                     #0f1830;
+$input-color:                  $body-color;
+$input-border-color:           #2d3c5c;
+$input-border-radius:          1rem;
+$input-padding-y:              0.72rem;
+$input-padding-x:              0.95rem;
+$input-placeholder-color:      #8ea3c7;
+
+$input-focus-bg:               #111c37;
+$input-focus-border-color:     #5bddff;
+$input-focus-color:            $body-color;
+$input-focus-box-shadow:       0 0 0 0.2rem rgba(57, 208, 255, 0.22);
+
+$input-disabled-bg:            #1a2338;
+$input-disabled-border-color:  #2a3650;
+$input-disabled-color:         #8ea3c7;
+
+// ----------------------------------------------------------
+// Form Select
+// ----------------------------------------------------------
+
+$form-select-bg:                 $input-bg;
+$form-select-color:              $input-color;
+$form-select-border-color:       $input-border-color;
+$form-select-border-radius:      $input-border-radius;
+$form-select-focus-border-color: $input-focus-border-color;
+$form-select-focus-box-shadow:   $input-focus-box-shadow;
+
+// ----------------------------------------------------------
+// Cards - rounded soft panels
+// ----------------------------------------------------------
+
+$card-bg:              $secondary-bg;
+$card-color:           $body-color;
+$card-border-color:    $border-color;
+$card-border-radius:   1.35rem;
+$card-cap-bg:          #18223b;
+$card-cap-color:       $body-color;
+$card-spacer-y:        1rem;
+$card-spacer-x:        1rem;
+
+// ----------------------------------------------------------
+// Modal
+// ----------------------------------------------------------
+
+$modal-content-bg:            $secondary-bg;
+$modal-content-color:         $body-color;
+$modal-content-border-color:  $border-color;
+$modal-content-border-radius: $border-radius-xl;
+$modal-header-border-color:   $border-color;
+$modal-footer-border-color:   $border-color;
+$modal-backdrop-bg:           #000;
+$modal-backdrop-opacity:      0.65;
+
+// ----------------------------------------------------------
+// Dropdowns - keeps dark styling coherent
+// ----------------------------------------------------------
+
+$dropdown-bg:                $secondary-bg;
+$dropdown-color:             $body-color;
+$dropdown-border-color:      $border-color;
+$dropdown-border-radius:     1rem;
+$dropdown-link-color:        $body-color;
+$dropdown-link-hover-color:  #ffffff;
+$dropdown-link-hover-bg:     #1b2742;
+$dropdown-link-active-color: #08101f;
+$dropdown-link-active-bg:    $primary;
+
+// ----------------------------------------------------------
+// Nav / Tabs - nice for lobby/game side panels
+// ----------------------------------------------------------
+
+$nav-link-color:             #a9bfdf;
+$nav-link-hover-color:       $light;
+$nav-tabs-border-color:      $border-color;
+$nav-tabs-link-hover-border-color: transparent transparent $border-color;
+$nav-tabs-link-active-color: $light;
+$nav-tabs-link-active-bg:    $secondary-bg;
+$nav-tabs-link-active-border-color: $border-color $border-color $secondary-bg;
+
+// ----------------------------------------------------------
+// Badges / Pills
+// ----------------------------------------------------------
+
+$badge-font-weight: 700;
+$badge-border-radius: 50rem;
+
+// ----------------------------------------------------------
+// Alerts
+// ----------------------------------------------------------
+
+$alert-border-radius: 1rem;
+
+// ----------------------------------------------------------
+// Shadows
+// ----------------------------------------------------------
+
+$box-shadow-sm: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.18);
+$box-shadow:    0 0.45rem 1.2rem rgba(0, 0, 0, 0.24);
+$box-shadow-lg: 0 0.8rem 2rem rgba(0, 0, 0, 0.32);
+
+// ==========================================================
+// Custom Battleship Game Colours
+// ==========================================================
+
+$game-ocean:             #123055;
+$game-ocean-alt:         #183b66;
+$game-grid-line:         #2b5588;
+$game-ship:              #91a9c9;
+$game-hit:               #ff5f7a;
+$game-sunk:              #d7264d;
+$game-miss:              #67e8ff;
+$game-target:            #ffb347;
+$game-scan:              #59f0e2;
+$game-fog:               #101827;
+$game-placement-valid:   #43d17c;
+$game-placement-invalid: #ffbd59;
+
+// ----------------------------------------------------------
+// Register game colours as Bootstrap component classes
+// Generates .btn-game-*, .btn-outline-game-*, .bg-game-*,
+// .text-game-*, .border-game-*
+// ----------------------------------------------------------
+
+$game-colors: (
+  "game-ocean":             $game-ocean,
+  "game-ocean-alt":         $game-ocean-alt,
+  "game-grid-line":         $game-grid-line,
+  "game-ship":              $game-ship,
+  "game-hit":               $game-hit,
+  "game-sunk":              $game-sunk,
+  "game-miss":              $game-miss,
+  "game-target":            $game-target,
+  "game-scan":              $game-scan,
+  "game-fog":               $game-fog,
+  "game-placement-valid":   $game-placement-valid,
+  "game-placement-invalid": $game-placement-invalid,
+);
+
+// ----------------------------------------------------------
+// Import Bootstrap foundation (functions + variables + maps)
+// so $theme-colors exists before we merge into it
+// ----------------------------------------------------------
+
+@import "../lib/bootstrap/scss/functions";
+@import "../lib/bootstrap/scss/variables";
+@import "../lib/bootstrap/scss/variables-dark";
+@import "../lib/bootstrap/scss/maps";
+
+$theme-colors: map-merge($theme-colors, $game-colors);
+
+// Import the rest of Bootstrap
+@import "../lib/bootstrap/scss/mixins";
+@import "../lib/bootstrap/scss/utilities";
+@import "../lib/bootstrap/scss/root";
+@import "../lib/bootstrap/scss/reboot";
+@import "../lib/bootstrap/scss/type";
+@import "../lib/bootstrap/scss/images";
+@import "../lib/bootstrap/scss/containers";
+@import "../lib/bootstrap/scss/grid";
+@import "../lib/bootstrap/scss/tables";
+@import "../lib/bootstrap/scss/forms";
+@import "../lib/bootstrap/scss/buttons";
+@import "../lib/bootstrap/scss/transitions";
+@import "../lib/bootstrap/scss/dropdown";
+@import "../lib/bootstrap/scss/button-group";
+@import "../lib/bootstrap/scss/nav";
+@import "../lib/bootstrap/scss/navbar";
+@import "../lib/bootstrap/scss/card";
+@import "../lib/bootstrap/scss/accordion";
+@import "../lib/bootstrap/scss/breadcrumb";
+@import "../lib/bootstrap/scss/pagination";
+@import "../lib/bootstrap/scss/badge";
+@import "../lib/bootstrap/scss/alert";
+@import "../lib/bootstrap/scss/progress";
+@import "../lib/bootstrap/scss/list-group";
+@import "../lib/bootstrap/scss/close";
+@import "../lib/bootstrap/scss/toasts";
+@import "../lib/bootstrap/scss/modal";
+@import "../lib/bootstrap/scss/tooltip";
+@import "../lib/bootstrap/scss/popover";
+@import "../lib/bootstrap/scss/carousel";
+@import "../lib/bootstrap/scss/spinners";
+@import "../lib/bootstrap/scss/offcanvas";
+@import "../lib/bootstrap/scss/placeholders";
+@import "../lib/bootstrap/scss/helpers";
+@import "../lib/bootstrap/scss/utilities/api";
+
+
+// Expose game colours as CSS custom properties
+:root {
+  @each $name, $color in $game-colors {
+    --#{$name}: #{$color};
+  }
+}

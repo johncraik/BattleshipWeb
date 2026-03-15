@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Battleship</title>
+    <link rel="stylesheet" href="~/css/custom.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <header class="battleship-header text-center py-4">
+        <div class="container-xl position-relative">
+            <div class="header-user-area">
+                <partial name="_LoginPartial" />
+            </div>
+            <div class="header-glow">
+                <h1 class="battleship-title mb-0">
+                    <span class="title-icon">&#9875;</span>
+                    BATTLESHIP
+                </h1>
+                <p class="battleship-subtitle mb-0">NAVAL WARFARE COMMAND</p>
+            </div>
+
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <nav class="header-nav mt-3">
+                    <ul class="header-nav-list">
+                        <li><a class="nav-link" href="#"><i class="bi bi-door-open me-1"></i>Lobby</a></li>
+                        <li><a class="nav-link" href="#"><i class="bi bi-crosshair me-1"></i>Play</a></li>
+                        <li><a class="nav-link" href="#"><i class="bi bi-people me-1"></i>Friends</a></li>
+                        <li><a class="nav-link" href="#"><i class="bi bi-trophy me-1"></i>Leaderboard</a></li>
+                    </ul>
+                </nav>
+            }
+        </div>
+    </header>
+
+    <main class="container-xl py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; @DateTime.Now.Year Battleship</small>
+    </footer>
+
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

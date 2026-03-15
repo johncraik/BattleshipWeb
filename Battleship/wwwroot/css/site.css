@@ -1,0 +1,215 @@
+/* ==========================================================
+   Battleship - Site Styles
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Header
+   ---------------------------------------------------------- */
+
+.battleship-header {
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(57, 208, 255, 0.12) 0%, transparent 60%),
+        linear-gradient(180deg, #0d1a30 0%, #0a1020 100%);
+    border-bottom: 1px solid #2a3650;
+    position: relative;
+    overflow: hidden;
+}
+
+.battleship-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #39d0ff 20%,
+        #63e6ff 50%,
+        #39d0ff 80%,
+        transparent 100%);
+    opacity: 0.8;
+}
+
+.header-glow {
+    position: relative;
+    display: inline-block;
+}
+
+.battleship-title {
+    font-family: "Inter", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 0.55rem;
+    margin-left: -1.2rem;
+    color: #eaf6ff;
+    text-shadow:
+        0 0 20px rgba(57, 208, 255, 0.5),
+        0 0 60px rgba(57, 208, 255, 0.2),
+        0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.title-icon {
+    display: inline-block;
+    margin-right: 0.3rem;
+    filter: drop-shadow(0 0 8px rgba(57, 208, 255, 0.6));
+}
+
+.battleship-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.45rem;
+    color: #7b8aa8;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+}
+
+/* ----------------------------------------------------------
+   Header Nav
+   ---------------------------------------------------------- */
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header-nav-list {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav-list .nav-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: #7b8aa8;
+    padding: 0.4rem 1rem;
+    border-radius: 50rem;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.header-nav-list .nav-link:hover:not(.disabled) {
+    color: #eaf6ff;
+    border-color: #2a3650;
+    background: rgba(57, 208, 255, 0.06);
+}
+
+.header-nav-list .nav-link.active {
+    color: #39d0ff;
+    border-color: rgba(57, 208, 255, 0.3);
+    background: rgba(57, 208, 255, 0.08);
+}
+
+/* ----------------------------------------------------------
+   Header User Area (login partial)
+   ---------------------------------------------------------- */
+
+.header-user-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.user-icon-btn {
+    color: #7b8aa8;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s ease, filter 0.2s ease;
+}
+
+.user-icon-btn:hover,
+.user-icon-btn:focus {
+    color: #39d0ff;
+    filter: drop-shadow(0 0 6px rgba(57, 208, 255, 0.4));
+}
+
+.user-dropdown {
+    background: #121a2e;
+    border: 1px solid #2a3650;
+    border-radius: 1rem;
+    padding: 0.4rem 0;
+    min-width: 200px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+}
+
+.user-dropdown .dropdown-item {
+    color: #e8f4ff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.55rem 1.1rem;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.user-dropdown .dropdown-item:hover,
+.user-dropdown .dropdown-item:focus {
+    background: #1b2742;
+    color: #ffffff;
+}
+
+.user-dropdown .dropdown-item.disabled {
+    color: #4a5a78;
+}
+
+.user-dropdown .dropdown-item-logout {
+    color: #ff6b88;
+}
+
+.user-dropdown .dropdown-item-logout:hover,
+.user-dropdown .dropdown-item-logout:focus {
+    background: rgba(255, 107, 136, 0.1);
+    color: #ff6b88;
+}
+
+.user-dropdown .dropdown-divider {
+    border-color: #2a3650;
+    margin: 0.3rem 0;
+}
+
+/* Login / Register buttons (logged out state) */
+
+.btn-outline-login {
+    color: #7b8aa8;
+    border-color: #2a3650;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    border-radius: 50rem;
+    padding: 0.35rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-login:hover {
+    color: #eaf6ff;
+    border-color: #39d0ff;
+    background: rgba(57, 208, 255, 0.06);
+}
+
+.btn-login {
+    background: rgba(57, 208, 255, 0.12);
+    color: #39d0ff;
+    border: 1px solid rgba(57, 208, 255, 0.3);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    border-radius: 50rem;
+    padding: 0.35rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-login:hover {
+    background: rgba(57, 208, 255, 0.2);
+    color: #eaf6ff;
+    border-color: #39d0ff;
+}
