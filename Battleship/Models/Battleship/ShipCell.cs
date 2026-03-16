@@ -16,4 +16,11 @@ public class ShipCell : AuditModel
     [ForeignKey(nameof(ShipId))]
     public Ship Ship { get; set; }
 
+    [Range(0, Ship.MaxWidth - 1)]
+    public ushort X { get; set; }
+    
+    [Range(0, Ship.MaxHeight - 1)]
+    public ushort Y { get; set; }
 }
+
+public record ShipCellDto(ushort X, ushort Y);

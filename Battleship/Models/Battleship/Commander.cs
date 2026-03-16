@@ -16,4 +16,8 @@ public class Commander : AuditModel
     public string? ImgPath { get; set; }
     
     public bool IsEnabled { get; set; }
+    
+    public ICollection<Ship> Ships { get; set; }
+
+    public const ushort ShipCount = 6;
 }
