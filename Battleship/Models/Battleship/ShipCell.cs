@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using JC.Core.Models.Auditing;
 
 namespace Battleship.Models.Battleship;
@@ -12,6 +13,7 @@ public class ShipCell : AuditModel
     [Required]
     [MaxLength(38)]
     public string ShipId { get; set; }
-    public Ship
-    
+    [ForeignKey(nameof(ShipId))]
+    public Ship Ship { get; set; }
+
 }
