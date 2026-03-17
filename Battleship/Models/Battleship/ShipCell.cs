@@ -24,6 +24,22 @@ public class ShipCell : AuditModel
     public ushort Y { get; set; }
     
     public ICollection<ShipHit> GameHits { get; set; }
+
+    public static bool[][] CreateMatrix(List<ShipCell> cells)
+    {
+        var matrix = new bool[Ship.MaxHeight][];
+        for (var i = 0; i < Ship.MaxHeight; i++)
+        {
+            matrix[i] = new bool[Ship.MaxWidth];
+        }
+        
+        foreach (var cell in cells)
+        {
+            matrix[cell.Y][cell.X] = true;
+        }
+        
+        return matrix;
+    }
 }
 
 public record CellCoordinate(ushort X, ushort Y);

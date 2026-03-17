@@ -1,5 +1,7 @@
 using Battleship;
 using Battleship.Data;
+using Battleship.Models.Battleship;
+using Battleship.Models.Games;
 using Battleship.Models.Identity;
 using JC.Communication.Email.Models;
 using JC.Communication.Extensions;
@@ -14,6 +16,16 @@ var builder = WebApplication.CreateBuilder(args);
 // ── Core ────────────────────────────────────────────────────
 builder.Services.AddCore<ApplicationDbContext>();
 builder.Services.AddMySqlDatabase<ApplicationDbContext>(builder.Configuration, migrationsAssembly: "Battleship");
+
+builder.Services.RegisterRepositoryContexts(
+    typeof(Commander),
+    typeof(Ship),
+    typeof(ShipCell),
+    typeof(Game),
+    typeof(GameLobby),
+    typeof(ShipPlacement),
+    typeof(BoardCellAction),
+    typeof(ShipHit));
 
 // ── Identity ────────────────────────────────────────────────
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole, ApplicationDbContext>();

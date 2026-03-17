@@ -26,21 +26,9 @@ public class Ship : AuditModel
     public ICollection<ShipCell> Cells { get; set; }
     public ICollection<ShipPlacement> GamePlacements { get; set; }
 
-    public bool[][] CellMatrix()
-    {
-        var matrix = new bool[MaxHeight][];
-        for (var i = 0; i < MaxHeight; i++)
-        {
-            matrix[i] = new bool[MaxWidth];
-        }
-        
-        foreach (var cell in Cells)
-        {
-            matrix[cell.Y][cell.X] = true;
-        }
-        
-        return matrix;
-    }
+    public bool[][] CellMatrix() 
+        => ShipCell.CreateMatrix(Cells?.ToList() 
+                                 ?? throw new InvalidOperationException("Cells is null"));
 
     public CellCoordinate SourceCell()
     {
