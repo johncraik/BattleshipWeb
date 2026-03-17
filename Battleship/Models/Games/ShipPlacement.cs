@@ -1,13 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Battleship.Models.Battleship;
+using Battleship.Models.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Battleship.Models.Games;
 
-[PrimaryKey(nameof(ShipId), nameof(GameId))]
 public class ShipPlacement
 {
+    [Key]
+    [MaxLength(38)]
+    public string Id { get; private set; } = Guid.NewGuid().ToString();
+    
     [Required]
     [MaxLength(38)]
     public string ShipId { get; set; }
@@ -26,18 +30,17 @@ public class ShipPlacement
     
     public ShipRotation Rotation { get; set; } = ShipRotation.SOUTH;
     
-    [Range(0, 15)]
+    [Range(0, BoardDictionary.Width0Based)]
     public ushort X { get; set; }
     
-    [Range(0, 15)]
+    [Range(0, BoardDictionary.Height0Based)]
     public ushort Y { get; set; }
     
-    [NotMapped]
-    public string? PlayerId => Game?.Player1CommanderId == Ship?.CommanderId 
-        ? Game?.Player1Id 
-        : Game?.Player2CommanderId == Ship?.CommanderId 
-            ? Game?.Player2Id 
-            : null;
+    [Required]
+    [MaxLength(38)]
+    public string PlayerId { get; set; }
+    [ForeignKey(nameof(PlayerId))]
+    public ApplicationUser Player { get; set; }
 }
 
 public enum ShipRotation

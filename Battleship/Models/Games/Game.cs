@@ -45,7 +45,7 @@ public class Game : AuditModel
     public DateTime? TimeFinished { get; private set; }
     
     [NotMapped]
-    public bool IsFinished => GameWinner == GameWinner.None || TimeFinished != null;
+    public bool IsFinished => GameWinner != GameWinner.None || TimeFinished != null;
     
     public bool IsPlayer1Turn { get; private set; }
 

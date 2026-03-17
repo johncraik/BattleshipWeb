@@ -56,7 +56,7 @@ public class Ship : AuditModel
             }
         }
         
-        throw new Exception("No source cell found");
+        throw new InvalidOperationException("No source cell found");
     }
     
     public const ushort MinSize = 2;
