@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Battleship.Models.Games;
 using JC.Core.Models.Auditing;
 
 namespace Battleship.Models.Battleship;
@@ -23,6 +24,7 @@ public class Ship : AuditModel
     public ushort Size { get; set; }
     
     public ICollection<ShipCell> Cells { get; set; }
+    public ICollection<ShipPlacement> GamePlacements { get; set; }
 
     public bool[][] CellMatrix()
     {
@@ -40,7 +42,7 @@ public class Ship : AuditModel
         return matrix;
     }
 
-    public ShipCellDto SourceCell()
+    public CellCoordinate SourceCell()
     {
         var matrix = CellMatrix();
         
@@ -52,7 +54,7 @@ public class Ship : AuditModel
                 var cell = row[x];
                 if (!cell) continue;
                 
-                return new ShipCellDto(x, y);
+                return new CellCoordinate(x, y);
             }
         }
         

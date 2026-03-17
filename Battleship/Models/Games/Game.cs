@@ -37,6 +37,9 @@ public class Game : AuditModel
     [ForeignKey(nameof(Player2CommanderId))]
     public Commander Player2Commander { get; set; }
     
+    public GameLobby Lobby { get; set; }
+    public ICollection<ShipPlacement> ShipPlacements { get; set; }
+    public ICollection<BoardCellAction> BoardCellActions { get; set; }
     
 
     [NotMapped]

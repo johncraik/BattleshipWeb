@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Battleship.Models.Games;
 using JC.Core.Models.Auditing;
 
 namespace Battleship.Models.Battleship;
@@ -17,7 +19,16 @@ public class Commander : AuditModel
     
     public bool IsEnabled { get; set; }
     
+    [NotMapped]
+    public bool IsValid => (Ships?.Count ?? 0) == ShipCount;
+    
     public ICollection<Ship> Ships { get; set; }
+    
+    [InverseProperty(nameof(Game.Player1Commander))]
+    public ICollection<Game> Player1Games { get; set; }
+    
+    [InverseProperty(nameof(Game.Player2Commander))]
+    public ICollection<Game> Player2Games { get; set; }
 
     public const ushort ShipCount = 6;
 }

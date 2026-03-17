@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Battleship.Models.Games;
 using JC.Core.Models.Auditing;
 
 namespace Battleship.Models.Battleship;
@@ -21,6 +22,8 @@ public class ShipCell : AuditModel
     
     [Range(0, Ship.MaxHeight - 1)]
     public ushort Y { get; set; }
+    
+    public ICollection<ShipHit> GameHits { get; set; }
 }
 
-public record ShipCellDto(ushort X, ushort Y);
+public record CellCoordinate(ushort X, ushort Y);

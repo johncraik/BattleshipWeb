@@ -8,25 +8,50 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="JC.BackgroundJobs" Version="3.6.1" />
-      <PackageReference Include="JC.Communication" Version="3.6.1" />
-      <PackageReference Include="JC.Communication.Web" Version="3.6.1" />
-      <PackageReference Include="JC.Core" Version="3.6.1" />
-      <PackageReference Include="JC.Github" Version="3.6.1" />
-      <PackageReference Include="JC.Identity" Version="3.6.1" />
-      <PackageReference Include="JC.MySql" Version="3.6.1" />
-      <PackageReference Include="JC.SqlServer.Hangfire" Version="3.6.1" />
-      <PackageReference Include="JC.Web" Version="3.6.3" />
+      <PackageReference Include="Hangfire.SqlServer" Version="1.8.23" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.14" />
       <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3">
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="JC.BackgroundJobs">
+        <HintPath>..\..\JC.BackgroundJobs.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Communication">
+        <HintPath>..\..\JC.Communication.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Communication.Web">
+        <HintPath>..\..\JC.Communication.Web.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Core">
+        <HintPath>..\..\JC.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Github">
+        <HintPath>..\..\JC.Github.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Identity">
+        <HintPath>..\..\JC.Identity.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.MySql">
+        <HintPath>..\..\JC.MySql.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.SqlServer.Hangfire">
+        <HintPath>..\..\JC.SqlServer.Hangfire.dll</HintPath>
+      </Reference>
+      <Reference Include="JC.Web">
+        <HintPath>..\..\JC.Web.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

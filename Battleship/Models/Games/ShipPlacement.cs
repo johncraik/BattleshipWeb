@@ -26,7 +26,7 @@ public class ShipPlacement
     
     //NOTE: Ideally service layer will ensure ship cells are loaded
     [NotMapped]
-    public ShipCellDto SourceCell => Ship.SourceCell();
+    public CellCoordinate SourceCell => Ship.SourceCell();
     
     public ShipRotation Rotation { get; set; } = ShipRotation.SOUTH;
     
@@ -36,11 +36,16 @@ public class ShipPlacement
     [Range(0, BoardDictionary.Height0Based)]
     public ushort Y { get; set; }
     
+    [NotMapped]
+    public CellCoordinate SourcePlacement => new (X, Y);
+    
     [Required]
     [MaxLength(38)]
     public string PlayerId { get; set; }
     [ForeignKey(nameof(PlayerId))]
     public ApplicationUser Player { get; set; }
+    
+    public ICollection<ShipHit> Hits { get; set; }
 }
 
 public enum ShipRotation
